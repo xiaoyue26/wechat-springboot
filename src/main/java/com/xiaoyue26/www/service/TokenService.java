@@ -3,7 +3,7 @@ package com.xiaoyue26.www.service;
 import com.xiaoyue26.www.entity.Check;
 import com.xiaoyue26.www.tool.EncoderHandler;
 import org.springframework.stereotype.Service;
-//import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.Arrays;
 
 /**
@@ -12,7 +12,7 @@ import java.util.Arrays;
 @Service
 public class TokenService {
     
-    // @Transactional
+    @Transactional
     public String validate(String wxToken, Check tokenModel) {
         String signature = tokenModel.getSignature();
         Long timestamp = tokenModel.getTimestamp();
